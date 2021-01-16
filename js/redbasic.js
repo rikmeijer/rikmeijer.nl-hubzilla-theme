@@ -1,5 +1,5 @@
 /**
- * rikmeijer-nl theme specific JavaScript
+ * rikmeijernl theme specific JavaScript
  */
 
 $(document).ready(function() {

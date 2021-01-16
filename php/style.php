@@ -6,28 +6,28 @@ if(! App::$install) {
 	$uid = get_theme_uid();
 
 	if($uid) {
-		load_pconfig($uid,'rikmeijer-nl');
+		load_pconfig($uid,'rikmeijernl');
 	}
 
 	// Load the owners pconfig
-	$nav_bg = get_pconfig($uid, 'rikmeijer-nl', 'nav_bg');
-	$nav_icon_colour = get_pconfig($uid, 'rikmeijer-nl', 'nav_icon_colour');
-	$nav_active_icon_colour = get_pconfig($uid, 'rikmeijer-nl', 'nav_active_icon_colour');
-	$banner_colour = get_pconfig($uid,'rikmeijer-nl','banner_colour');
-	$narrow_navbar = get_pconfig($uid,'rikmeijer-nl','narrow_navbar');
-	$link_colour = get_pconfig($uid, 'rikmeijer-nl', 'link_colour');
-	$schema = get_pconfig($uid,'rikmeijer-nl','schema');
-	$bgcolour = get_pconfig($uid, 'rikmeijer-nl', 'background_colour');
-	$background_image = get_pconfig($uid, 'rikmeijer-nl', 'background_image');
-	$item_colour = get_pconfig($uid, 'rikmeijer-nl', 'item_colour');
-	$comment_item_colour = get_pconfig($uid, 'rikmeijer-nl', 'comment_item_colour');
-	$font_size = get_pconfig($uid, 'rikmeijer-nl', 'font_size');
-	$font_colour = get_pconfig($uid, 'rikmeijer-nl', 'font_colour');
-	$radius = get_pconfig($uid, 'rikmeijer-nl', 'radius');
-	$shadow = get_pconfig($uid,'rikmeijer-nl','photo_shadow');
-	$converse_width=get_pconfig($uid,'rikmeijer-nl','converse_width');
-	$top_photo=get_pconfig($uid,'rikmeijer-nl','top_photo');
-	$reply_photo=get_pconfig($uid,'rikmeijer-nl','reply_photo');
+	$nav_bg = get_pconfig($uid, 'rikmeijernl', 'nav_bg');
+	$nav_icon_colour = get_pconfig($uid, 'rikmeijernl', 'nav_icon_colour');
+	$nav_active_icon_colour = get_pconfig($uid, 'rikmeijernl', 'nav_active_icon_colour');
+	$banner_colour = get_pconfig($uid,'rikmeijernl','banner_colour');
+	$narrow_navbar = get_pconfig($uid,'rikmeijernl','narrow_navbar');
+	$link_colour = get_pconfig($uid, 'rikmeijernl', 'link_colour');
+	$schema = get_pconfig($uid,'rikmeijernl','schema');
+	$bgcolour = get_pconfig($uid, 'rikmeijernl', 'background_colour');
+	$background_image = get_pconfig($uid, 'rikmeijernl', 'background_image');
+	$item_colour = get_pconfig($uid, 'rikmeijernl', 'item_colour');
+	$comment_item_colour = get_pconfig($uid, 'rikmeijernl', 'comment_item_colour');
+	$font_size = get_pconfig($uid, 'rikmeijernl', 'font_size');
+	$font_colour = get_pconfig($uid, 'rikmeijernl', 'font_colour');
+	$radius = get_pconfig($uid, 'rikmeijernl', 'radius');
+	$shadow = get_pconfig($uid,'rikmeijernl','photo_shadow');
+	$converse_width=get_pconfig($uid,'rikmeijernl','converse_width');
+	$top_photo=get_pconfig($uid,'rikmeijernl','top_photo');
+	$reply_photo=get_pconfig($uid,'rikmeijernl','reply_photo');
 }
 
 // Now load the scheme.  If a value is changed above, we'll keep the settings
@@ -44,28 +44,28 @@ if($_REQUEST['schema']) {
 if (($schema) && ($schema != '---')) {
 
 	// Check it exists, because this setting gets distributed to clones
-	if(file_exists('view/theme/rikmeijer-nl/schema/' . $schema . '.php')) {
-		$schemefile = 'view/theme/rikmeijer-nl/schema/' . $schema . '.php';
+	if(file_exists('view/theme/rikmeijernl/schema/' . $schema . '.php')) {
+		$schemefile = 'view/theme/rikmeijernl/schema/' . $schema . '.php';
 		require_once ($schemefile);
 	}
 
-	if(file_exists('view/theme/rikmeijer-nl/schema/' . $schema . '.css')) {
-		$schemecss = file_get_contents('view/theme/rikmeijer-nl/schema/' . $schema . '.css');
+	if(file_exists('view/theme/rikmeijernl/schema/' . $schema . '.css')) {
+		$schemecss = file_get_contents('view/theme/rikmeijernl/schema/' . $schema . '.css');
 	}
 
 }
 
 // Allow admins to set a default schema for the hub.
-// default.php and default.css MUST be symlinks to existing schema files in view/theme/rikmeijer-nl/schema
+// default.php and default.css MUST be symlinks to existing schema files in view/theme/rikmeijernl/schema
 if ((!$schema) || ($schema == '---')) {
 
-	if(file_exists('view/theme/rikmeijer-nl/schema/default.php')) {
-		$schemefile = 'view/theme/rikmeijer-nl/schema/default.php';
+	if(file_exists('view/theme/rikmeijernl/schema/default.php')) {
+		$schemefile = 'view/theme/rikmeijernl/schema/default.php';
 		require_once ($schemefile);
 	}
 
-	if(file_exists('view/theme/rikmeijer-nl/schema/default.css')) {
-		$schemecss = file_get_contents('view/theme/rikmeijer-nl/schema/default.css');
+	if(file_exists('view/theme/rikmeijernl/schema/default.css')) {
+		$schemecss = file_get_contents('view/theme/rikmeijernl/schema/default.css');
 	}
 
 }
@@ -108,12 +108,12 @@ if(! $reply_photo)
 	$reply_photo = '2.3rem';
 
 // Apply the settings
-if(file_exists('view/theme/rikmeijer-nl/css/style.css')) {
+if(file_exists('view/theme/rikmeijernl/css/style.css')) {
 
-	$x = file_get_contents('view/theme/rikmeijer-nl/css/style.css');
+	$x = file_get_contents('view/theme/rikmeijernl/css/style.css');
 
-	if($narrow_navbar && file_exists('view/theme/rikmeijer-nl/css/narrow_navbar.css')) {
-		$x .= file_get_contents('view/theme/rikmeijer-nl/css/narrow_navbar.css');
+	if($narrow_navbar && file_exists('view/theme/rikmeijernl/css/narrow_navbar.css')) {
+		$x .= file_get_contents('view/theme/rikmeijernl/css/narrow_navbar.css');
 	}
 
 	if($schemecss) {
@@ -160,5 +160,5 @@ if(file_exists('view/theme/rikmeijer-nl/css/style.css')) {
 
 // Set the schema to the default schema in derived themes. See the documentation for creating derived themes how to override this. 
 
-if(local_channel() && App::$channel && App::$channel['channel_theme'] != 'rikmeijer-nl')
-	set_pconfig(local_channel(), 'rikmeijer-nl', 'schema', '---');
+if(local_channel() && App::$channel && App::$channel['channel_theme'] != 'rikmeijernl')
+	set_pconfig(local_channel(), 'rikmeijernl', 'schema', '---');

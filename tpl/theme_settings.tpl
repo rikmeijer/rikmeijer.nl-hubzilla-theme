@@ -22,13 +22,13 @@
 
 <script>
 	$(function(){
-		$('#id_rikmeijer-nl_nav_bg, #id_rikmeijer-nl_nav_icon_colour, #id_rikmeijer-nl_nav_active_icon_colour, #id_rikmeijer-nl_banner_colour').colorpicker({format: 'rgba'});
-		$('#id_rikmeijer-nl_link_colour,#id_rikmeijer-nl_background_colour').colorpicker();
-		$('#id_rikmeijer-nl_toolicon_colour,#id_rikmeijer-nl_toolicon_activecolour,#id_rikmeijer-nl_font_colour').colorpicker();
-		$('#id_rikmeijer-nl_item_colour,#id_rikmeijer-nl_comment_item_colour,#id_rikmeijer-nl_comment_border_colour').colorpicker({format: 'rgba'});
+		$('#id_rikmeijernl_nav_bg, #id_rikmeijernl_nav_icon_colour, #id_rikmeijernl_nav_active_icon_colour, #id_rikmeijernl_banner_colour').colorpicker({format: 'rgba'});
+		$('#id_rikmeijernl_link_colour,#id_rikmeijernl_background_colour').colorpicker();
+		$('#id_rikmeijernl_toolicon_colour,#id_rikmeijernl_toolicon_activecolour,#id_rikmeijernl_font_colour').colorpicker();
+		$('#id_rikmeijernl_item_colour,#id_rikmeijernl_comment_item_colour,#id_rikmeijernl_comment_border_colour').colorpicker({format: 'rgba'});
 	});
 </script>
 {{/if}}
 <div class="settings-submit-wrapper" >
-	<button type="submit" name="rikmeijer-nl-settings-submit" class="btn btn-primary">{{$submit}}</button>
+	<button type="submit" name="rikmeijernl-settings-submit" class="btn btn-primary">{{$submit}}</button>
 </div>
